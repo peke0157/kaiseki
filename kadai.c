@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#define MAX 10000
+#define MAX 100000
 
 int main (void){
     double x, y;    // ランダムなxとyの座標
@@ -24,10 +24,16 @@ int main (void){
         }
 
         // 途中結果の表示
-        if ((i + 1) % 1000 == 0){
+            if ((i + 1) % 1000 == 0){
+                pi = (double)count / (i + 1) * 4.0;
+                printf("%6d回 | %.6f\n", i + 1, pi);
+            }  
+        
+        /*else if ((i + 1) > 10000)
+        if ((i + 1) % 10000 == 0){
             pi = (double)count / (i + 1) * 4.0;
             printf("%6d回 | %.6f\n", i + 1, pi);
-        }
+        }*/
     }
 
     printf("--------------------------------\n");
